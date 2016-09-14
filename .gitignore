@@ -1,0 +1,12 @@
+public
+node_modules
+dist
+.tmp
+.sass-cache
+.DS_Store
+/tmp
+build
+npm-debug.log
+doc
+config.json
+app/node_modules

@@ -1,0 +1,42 @@
+<header>
+	<div class="row">
+		<div class="col-sm-4">
+			<h3 id="hostPageTitle" style="margin: 0px;">
+				Users
+			</h3>
+		</div>
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4 action-buttons">
+			<a class="btn btn-primary btn-sm pull-right" href="#/admin/user/new">
+				<span class="glyphicon glyphicon-plus"></span> Add
+			</a>
+		</div>
+	</div>
+</header>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Username</th>
+			<th>Is Ben?</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="userObj in users">
+			<td>
+				{{userObj.name}}
+			</td>
+			<td>
+				{{userObj.username}}
+			</td>
+			<td>
+				<span ng-if="userObj.isBen">
+					Yes
+				</span>
+				<span ng-if="!userObj.isBen">
+					No
+				</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
