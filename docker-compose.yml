@@ -1,0 +1,23 @@
+version: '2'
+services:
+
+  rethinkdb:
+    image: rethinkdb:2.3.4
+    ports:
+      - 3737:8080
+    networks:
+      uqcs:
+        aliases:
+          - rethinkdb
+
+  app:
+    image: davefinster/uqcsdemo:latest
+    ports:
+      - 3000:3000
+    networks:
+      - uqcs
+    depends_on:
+      - rethinkdb
+
+networks:
+  uqcs:
